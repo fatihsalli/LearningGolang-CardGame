@@ -1,13 +1,31 @@
 package main
 
+import (
+	"fmt"
+)
+
 func main() {
+	/*
+		cards := newDeck()
+
+		//Deal method give two array first of this for hand and second one for remaining Cards
+		hand, remainingCards := deal(cards, 5)
+
+		hand.print()
+		remainingCards.print()
+		//=> []byte [72 105 32 116 104 101 114 101 33] Ascii code of "Hi there!"
+		greeting := "Hi there!"
+		fmt.Println([]byte(greeting))
+
+	*/
+
+	//=> To write hand and remain cards, we used to 'io-util' library with func WriteFile(...)
 	cards := newDeck()
+	fmt.Println(cards.toString())
 
-	//Deal method give two array first of this for hand and second one for remaining Cards
 	hand, remainingCards := deal(cards, 5)
-
-	hand.print()
-	remainingCards.print()
+	fmt.Println(hand)
+	fmt.Println(remainingCards)
 }
 
 /*
@@ -30,9 +48,9 @@ func main() {
 	}
 
 }
-*/
 
-/* func => function - newCard() => Define action with method name - string => return value of type
+func => function - newCard() => Define action with method name - string => return value of type
 func newCard() string {
 	return "Five of Diamonds"
-}*/
+}
+*/
