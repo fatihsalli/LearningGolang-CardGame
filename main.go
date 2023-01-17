@@ -1,10 +1,32 @@
 package main
 
-func main() {
-	cards := newDeck()
-	cards.shuffle()
-	cards.print()
+import (
+	"fmt"
+	"os"
+)
 
+func main() {
+	// => new Deck
+	card := newDeck()
+
+	// => to print
+	card.print()
+
+	// => to mix card
+	card.shuffle()
+
+	// => to save local
+	err := card.saveToFile("my_cards")
+	if err != nil {
+		fmt.Println("Error: ", err)
+		os.Exit(1)
+	}
+
+	// => to read from saved file
+	newCard := newDeckFromFile("my_cards")
+
+	//=> to print
+	newCard.print()
 }
 
 /*

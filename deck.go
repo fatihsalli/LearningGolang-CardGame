@@ -46,7 +46,7 @@ func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
 }
 
-// => To save file (Package has changed from 'ioutil' to 'os')
+// => To save file (Package has changed from 'io-util' to 'os')
 func (d deck) saveToFile(filename string) error {
 	return os.WriteFile(filename, []byte(d.toString()), 0666)
 }
