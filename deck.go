@@ -9,11 +9,10 @@ type deck []string
 
 func newDeck() deck {
 	cards := deck{}
-
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
 
-	// If we don't declare 'i' value we can say that with '_'
+	// If we don't declare 'i' value we can say that with '_' - otherwise we will get error
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
 			cards = append(cards, value+" of "+suit)
